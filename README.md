@@ -19,7 +19,7 @@ import FacebookSignIn from 'react-facebook-signin';
     buttonTextType="login_with"        // login_with / continue_with
     isShowFaces={false}                // true / false
     showMaxFaces={1}                   // true / false
-    isAutoShowSingOut={true}           // true / false
+    isAutoShowSignOut={true}           // true / false
     isShowSelfFace={true}              // true / false
     onAuthStatusChanged={this.foo}     // foo(response) {...}
 />

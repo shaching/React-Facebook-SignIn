@@ -45,7 +45,7 @@ export default class FacebookSignIn extends React.Component {
                 data-size={this.props.buttonSize}
                 data-button-type={this.props.buttonTextType}
                 data-show-faces={this.props.isShowFaces}
-                data-auto-logout-link={this.props.isAutoShowSingOut}
+                data-auto-logout-link={this.props.isAutoShowSignOut}
                 data-use-continue-as={this.props.isShowSelfFace}
             />
         );
@@ -59,7 +59,7 @@ FacebookSignIn.propTypes = {
     buttonTextType: PropTypes.string.isRequired,
     isShowFaces: PropTypes.bool.isRequired,
     showMaxFaces: PropTypes.number.isRequired,
-    isAutoShowSingOut: PropTypes.bool.isRequired,
+    isAutoShowSignOut: PropTypes.bool.isRequired,
     isShowSelfFace: PropTypes.bool.isRequired,
     onAuthStatusChanged: PropTypes.func.isRequired,
 };
