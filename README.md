@@ -1,7 +1,7 @@
 # ReactFacebookSignIn
 Facebook React Login Component.
 
-# Install
+# Install (Use Facebook SDK v2.10)
 ```
 yarn add react-facebook-signin
 ```
@@ -11,14 +11,17 @@ yarn add react-facebook-signin
 import FacebookSignIn from 'react-facebook-signin';
 
 // https://developers.facebook.com/docs/facebook-login/web/login-button
+
 <FacebookSignIn
     appId="948794879487"               // your-app-id
     language="zh_TW"                   // your-location-language
     buttonSize="large"                 // small / medium / large
     buttonTextType="login_with"        // login_with / continue_with
     isShowFaces={false}                // true / false
-    showMaxFaces={1}                   // 1, 2, 3...
-    onSignInStatusChanged={this.foo}   // your function
+    showMaxFaces={1}                   // true / false
+    isAutoShowSingOut={true}           // true / false
+    isShowSelfFace={true}              // true / false
+    onAuthStatusChanged={this.foo}     // foo(response) {...}
 />
 ```
 

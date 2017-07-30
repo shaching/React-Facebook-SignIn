@@ -7,8 +7,8 @@ export default class FacebookSignIn extends React.Component {
         this.loadFacebookSdk();
     }
 
-    onSignInStatusChanged() {
-        window.FB.Event.subscribe('auth.statusChange', this.props.onSignInStatusChanged);
+    onAuthStatusChanged() {
+        window.FB.Event.subscribe('auth.statusChange', this.props.onAuthStatusChanged);
     }
 
     initFacebookSdk() {
@@ -20,7 +20,7 @@ export default class FacebookSignIn extends React.Component {
                 version: 'v2.10'
             });
             window.FB.AppEvents.logPageView();
-            this.onSignInStatusChanged();
+            this.onAuthStatusChanged();
         };
     }
 
@@ -45,8 +45,8 @@ export default class FacebookSignIn extends React.Component {
                 data-size={this.props.buttonSize}
                 data-button-type={this.props.buttonTextType}
                 data-show-faces={this.props.isShowFaces}
-                data-auto-logout-link="false"
-                data-use-continue-as="false"
+                data-auto-logout-link={this.props.isAutoShowSingOut}
+                data-use-continue-as={this.props.isShowSelfFace}
             />
         );
     }
@@ -59,5 +59,7 @@ FacebookSignIn.propTypes = {
     buttonTextType: PropTypes.string.isRequired,
     isShowFaces: PropTypes.bool.isRequired,
     showMaxFaces: PropTypes.number.isRequired,
-    onSignInStatusChanged: PropTypes.func.isRequired,
+    isAutoShowSingOut: PropTypes.bool.isRequired,
+    isShowSelfFace: PropTypes.bool.isRequired,
+    onAuthStatusChanged: PropTypes.func.isRequired,
 };
