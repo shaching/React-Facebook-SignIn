@@ -1,5 +1,5 @@
 # ReactFacebookSignIn
-React for Facebook Login SDK.
+Facebook React Login Component.
 
 # Install
 ```

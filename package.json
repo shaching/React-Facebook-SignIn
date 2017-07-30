@@ -1,6 +1,8 @@
 {
     "name": "react-facebook-signin",
     "version": "0.0.1",
+    "description": "Facebook React Login Component.",
+    "main": "./lib/FacebookSignIn.js",
     "repository": "https://github.com/shaching/ReactFacebookSignIn",
     "author": "Johnny Chu <chuhsun@gmail.com>",
     "license": "Apache 2.0",
