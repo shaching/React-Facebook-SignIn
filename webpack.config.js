@@ -65,7 +65,6 @@ module.exports = {
                 drop_console: false,
             }
         }),
-        new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurrenceOrderPlugin(),
     ],
 };
