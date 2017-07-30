@@ -50,10 +50,9 @@ module.exports = {
     },
 
     externals: {
-        is: 'is_js',
         react: 'react',
-        ReactDOM: 'react-dom',
-        PropTypes: 'prop-types'
+        'react-dom': 'ReactDOM',
+        'prop-types': 'PropTypes',
     },
 
     resolve: {

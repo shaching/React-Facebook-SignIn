@@ -3,7 +3,7 @@ Facebook React Login Component.
 
 # Install (Use Facebook SDK v2.10)
 ```
-yarn add react-facebook-signin
+yarn add react-facebook-signin react react-dom prop-types
 ```
 
 # Use with ES6

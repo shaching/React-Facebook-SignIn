@@ -1,6 +1,6 @@
 {
     "name": "react-facebook-signin",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "description": "Facebook React Login Component.",
     "main": "./lib/FacebookSignIn.js",
     "repository": "https://github.com/shaching/ReactFacebookSignIn",
@@ -11,7 +11,6 @@
         "lint": "eslint ./src"
     },
     "dependencies": {
-        "is_js": "^0.9.0",
         "prop-types": "^15.5.10",
         "react": "^15.6.1",
         "react-dom": "^15.6.1"
