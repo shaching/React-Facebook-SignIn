@@ -49,12 +49,6 @@ module.exports = {
         ]
     },
 
-    externals: {
-        react: 'react',
-        'react-dom': 'ReactDOM',
-        'prop-types': 'PropTypes',
-    },
-
     resolve: {
         extensions: ['.js', '.jsx', '.css']
     },
@@ -71,5 +65,7 @@ module.exports = {
                 drop_console: false,
             }
         }),
+        new webpack.optimize.DedupePlugin(),
+        new webpack.optimize.OccurrenceOrderPlugin(),
     ],
 };
