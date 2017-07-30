@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export default class FacebookSignIn extends React.Component {
-    componentDidMount() {
+    componentWillMount() {
         this.initFacebookSdk();
         this.loadFacebookSdk();
     }
 
-    getLoginStatus() {
-        window.FB.getLoginStatus(this.props.signInResponse);
+    onSignInStatusChanged() {
+        window.FB.Event.subscribe('auth.statusChange', this.props.onSignInStatusChanged);
     }
 
     initFacebookSdk() {
@@ -16,11 +16,11 @@ export default class FacebookSignIn extends React.Component {
             window.FB.init({
                 appId: this.props.appId,
                 autoLogAppEvents: true,
-                xfbml: this.props.xfbml,
+                xfbml: true,
                 version: 'v2.10'
             });
             window.FB.AppEvents.logPageView();
-            this.getLoginStatus();
+            this.onSignInStatusChanged();
         };
     }
 
@@ -54,11 +54,10 @@ export default class FacebookSignIn extends React.Component {
 
 FacebookSignIn.propTypes = {
     appId: PropTypes.string.isRequired,
-    xfbml: PropTypes.bool.isRequired,
     language: PropTypes.string.isRequired,
     buttonSize: PropTypes.string.isRequired,
     buttonTextType: PropTypes.string.isRequired,
     isShowFaces: PropTypes.bool.isRequired,
     showMaxFaces: PropTypes.number.isRequired,
-    signInResponse: PropTypes.func.isRequired,
+    onSignInStatusChanged: PropTypes.func.isRequired,
 };

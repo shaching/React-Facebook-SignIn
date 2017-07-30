@@ -1,6 +1,6 @@
 {
     "name": "react-facebook-signin",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Facebook React Login Component.",
     "main": "./lib/FacebookSignIn.js",
     "repository": "https://github.com/shaching/ReactFacebookSignIn",
@@ -29,6 +29,7 @@
         "eslint-plugin-import": "^2.7.0",
         "eslint-plugin-jsx-a11y": "^5.1.1",
         "eslint-plugin-react": "^7.1.0",
+        "extract-text-webpack-plugin": "^3.0.0",
         "webpack": "^3.4.1"
     }
 }

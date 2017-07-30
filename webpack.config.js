@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: [
@@ -20,23 +21,30 @@ module.exports = {
                 test: /\.jsx?$/,
                 include: [path.resolve('src')],
                 exclude: [path.resolve('node_modules')],
-                loader: 'eslint-loader'
+                use: 'eslint-loader'
             }, {
                 test: /\.jsx?$/,
                 include: [path.resolve('src')],
                 exclude: [path.resolve('node_modules')],
-                loader: 'babel-loader'
+                use: 'babel-loader'
+            }, {
+                test: /\.css?$/,
+                include: [path.resolve('app')],
+                exclude: [path.resolve('node_modules')],
+                use: ExtractTextPlugin.extract({
+                    use: ['css-loader']
+                })
             }, {
                 enforce: 'pre',
                 test: /\.js$/,
                 include: [path.resolve('src')],
                 exclude: [path.resolve('node_modules')],
-                loader: 'eslint-loader'
+                use: 'eslint-loader'
             }, {
                 test: /\.js$/,
                 include: [path.resolve('src')],
                 exclude: [path.resolve('node_modules')],
-                loader: 'babel-loader'
+                use: 'babel-loader'
             }
         ]
     },
@@ -49,10 +57,15 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx', '.css']
     },
 
     plugins: [
+        new ExtractTextPlugin({
+            filename: 'bundle.css',
+            disable: false,
+            allChunks: true
+        }),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false,
