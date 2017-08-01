@@ -1,6 +1,6 @@
-const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
     entry: [
@@ -59,12 +59,13 @@ module.exports = {
             disable: false,
             allChunks: true
         }),
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false,
-                drop_console: false,
+        new UglifyJSPlugin({
+            parallel: true,
+            uglifyOptions: {
+                ecma: 8,
+                compress: true,
+                warnings: false
             }
-        }),
-        new webpack.optimize.OccurrenceOrderPlugin(),
+        })
     ],
 };
