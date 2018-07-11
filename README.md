@@ -1,4 +1,4 @@
-# ReactFacebookSignIn
+# React Facebook SignIn
 Facebook React Login Component.
 
 # Install (Use Facebook SDK v2.10)
